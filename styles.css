@@ -73,7 +73,7 @@ body {
   aspect-ratio: 4 / 3;
   border: 1px solid var(--line-strong);
   border-radius: 8px;
-  background: #fff url("svg/placeholder.svg") no-repeat center / auto 90px;
+  background: #fff url("placeholder.svg") no-repeat center / auto 90px;
 }
 
 .kicker {
@@ -147,7 +147,7 @@ body {
   height: 28px;
   border: 1px solid var(--line-strong);
   border-radius: 4px;
-  background-image: url("svg/placeholder.svg");
+  background-image: url("placeholder.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 18px;
@@ -395,7 +395,7 @@ li + li {
   height: 56px;
   border: none;
   border-radius: 6px;
-  background: #fff url("svg/placeholder.svg") no-repeat center / auto 30px;
+  background: #fff url("placeholder.svg") no-repeat center / auto 30px;
 }
 
 .how-it-works .steps {
@@ -423,7 +423,7 @@ li + li {
   width: 100%;
   border: 1px solid var(--line-strong);
   border-radius: 6px;
-  background-image: url("svg/placeholder.svg");
+  background-image: url("placeholder.svg");
   background-size: auto 80px;
   background-position: center;
   background-repeat: no-repeat;
@@ -523,7 +523,7 @@ li + li {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("svg/placeholder.svg");
+  background-image: url("placeholder.svg");
   background-size: auto 80px;
   background-position: center;
   background-repeat: no-repeat;
@@ -682,7 +682,7 @@ tbody th {
   display: inline-block;
   border: 1px solid var(--line-strong);
   border-radius: 4px;
-  background-image: url("svg/placeholder.svg");
+  background-image: url("placeholder.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 14px;
