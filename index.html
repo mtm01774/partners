@@ -112,6 +112,53 @@
                   </div>
                 </div>
 
+                <div class="content-block testimonials" data-testimonials>
+                  <div class="testimonial-head">
+                    <h3>Testimonials</h3>
+                    <div class="testimonial-controls">
+                      <button
+                        class="icon-btn"
+                        type="button"
+                        aria-label="Previous testimonial"
+                        data-action="prev"
+                      >
+                        &larr;
+                      </button>
+                      <button
+                        class="icon-btn"
+                        type="button"
+                        aria-label="Next testimonial"
+                        data-action="next"
+                      >
+                        &rarr;
+                      </button>
+                    </div>
+                  </div>
+                  <div class="testimonial-viewport" aria-live="polite">
+                    <article class="testimonial-item" data-testimonial-item>
+                      <p class="testimonial-quote">
+                        "Defined.ai gave us global exposure while keeping compliance and quality
+                        standards clear from day one."
+                      </p>
+                      <p class="testimonial-meta">Data Operations Lead, Language Data Company</p>
+                    </article>
+                    <article class="testimonial-item" data-testimonial-item hidden>
+                      <p class="testimonial-quote">
+                        "The marketplace workflow helped us turn specialized datasets into a
+                        repeatable revenue stream."
+                      </p>
+                      <p class="testimonial-meta">Founder, Regional AI Data Provider</p>
+                    </article>
+                    <article class="testimonial-item" data-testimonial-item hidden>
+                      <p class="testimonial-quote">
+                        "Partnership support made contracting and enterprise onboarding much
+                        faster than our previous channels."
+                      </p>
+                      <p class="testimonial-meta">Head of Partnerships, Multimodal Data Vendor</p>
+                    </article>
+                  </div>
+                </div>
+
                 <div class="content-block">
                   <h3>Trusted by leading AI teams</h3>
                   <div class="logo-grid" aria-label="Placeholder logos">
@@ -182,6 +229,53 @@
                     <article class="card">Project Visibility</article>
                     <article class="card">Operational Support</article>
                     <article class="card">Long-Term Collaboration</article>
+                  </div>
+                </div>
+
+                <div class="content-block testimonials" data-testimonials>
+                  <div class="testimonial-head">
+                    <h3>Testimonials</h3>
+                    <div class="testimonial-controls">
+                      <button
+                        class="icon-btn"
+                        type="button"
+                        aria-label="Previous testimonial"
+                        data-action="prev"
+                      >
+                        &larr;
+                      </button>
+                      <button
+                        class="icon-btn"
+                        type="button"
+                        aria-label="Next testimonial"
+                        data-action="next"
+                      >
+                        &rarr;
+                      </button>
+                    </div>
+                  </div>
+                  <div class="testimonial-viewport" aria-live="polite">
+                    <article class="testimonial-item" data-testimonial-item>
+                      <p class="testimonial-quote">
+                        "We gained consistent enterprise opportunities with clear project scoping
+                        and dependable collaboration."
+                      </p>
+                      <p class="testimonial-meta">Delivery Director, AI Services Firm</p>
+                    </article>
+                    <article class="testimonial-item" data-testimonial-item hidden>
+                      <p class="testimonial-quote">
+                        "Defined.ai's operational model helped our annotation team scale without
+                        sacrificing quality."
+                      </p>
+                      <p class="testimonial-meta">Program Manager, Data Labeling Partner</p>
+                    </article>
+                    <article class="testimonial-item" data-testimonial-item hidden>
+                      <p class="testimonial-quote">
+                        "The partnership framework made enterprise communication and commercial
+                        alignment straightforward."
+                      </p>
+                      <p class="testimonial-meta">COO, Applied AI Consultancy</p>
+                    </article>
                   </div>
                 </div>
 
@@ -340,6 +434,53 @@
           panelContainer.style.minHeight = maxHeight + 'px';
         }
 
+        function initTestimonials() {
+          var testimonialGroups = Array.prototype.slice.call(
+            document.querySelectorAll('[data-testimonials]')
+          );
+
+          testimonialGroups.forEach(function (group) {
+            var items = Array.prototype.slice.call(
+              group.querySelectorAll('[data-testimonial-item]')
+            );
+            var prevButton = group.querySelector('[data-action="prev"]');
+            var nextButton = group.querySelector('[data-action="next"]');
+            var currentIndex = 0;
+
+            function showItem(index) {
+              currentIndex = index;
+
+              items.forEach(function (item, itemIndex) {
+                item.hidden = itemIndex !== currentIndex;
+              });
+
+              syncPanelHeight();
+            }
+
+            if (!items.length || !prevButton || !nextButton) {
+              return;
+            }
+
+            prevButton.addEventListener('click', function () {
+              var nextIndex = currentIndex - 1;
+              if (nextIndex < 0) {
+                nextIndex = items.length - 1;
+              }
+              showItem(nextIndex);
+            });
+
+            nextButton.addEventListener('click', function () {
+              var nextIndex = currentIndex + 1;
+              if (nextIndex >= items.length) {
+                nextIndex = 0;
+              }
+              showItem(nextIndex);
+            });
+
+            showItem(0);
+          });
+        }
+
         tabs.forEach(function (tab) {
           tab.addEventListener('click', function () {
             setActiveTab(tab, false);
@@ -374,6 +515,7 @@
         });
 
         setActiveTab(tabs[0], false);
+        initTestimonials();
         syncPanelHeight();
 
         window.addEventListener('resize', syncPanelHeight);
