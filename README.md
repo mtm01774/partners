@@ -1,4 +1,4 @@
-# Defined.ai Partnerships Wireframe
+# Partnerships Wireframe
 
 Low-fidelity, grayscale, desktop-first responsive wireframe built with plain HTML, CSS, and minimal vanilla JavaScript.
 
