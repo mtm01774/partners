@@ -5,10 +5,12 @@
   --line: #ddd;
   --line-strong: #ccc;
   --btn: #222;
-  --space-section: 88px;
+  --link: #1d4ed8;
+  --link-hover: #1e40af;
+  --space-section: 20px;
   --radius: 10px;
   --top-nav-height: 76px;
-  --tabs-offset: 10px;
+  --tabs-offset: 40px;
 }
 
 * {
@@ -32,18 +34,19 @@ body {
 .container {
   width: min(100%, 1440px);
   margin: 0 auto;
-  padding: 0 clamp(20px, 3vw, 36px);
+  padding: 20px clamp(20px, 3vw, 36px);
 }
 
 .section {
-  border-top: 1px solid var(--line);
+  border-top: 0;
   padding: var(--space-section) 0;
 }
 
 .section-first {
   border-top: 0;
   background-color: #f1f1f1;
-  padding-top: 96px;
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 
 .hero h1 {
@@ -73,7 +76,7 @@ body {
 }
 
 .text-link {
-  color: var(--text);
+  color: var(--link);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -112,7 +115,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--text);
+  color: var(--link);
   text-decoration: none;
   font-weight: 600;
   white-space: nowrap;
@@ -137,7 +140,7 @@ body {
 }
 
 .top-nav__links a {
-  color: var(--text);
+  color: var(--link);
   text-decoration: none;
   font-size: 0.95rem;
   white-space: nowrap;
@@ -180,9 +183,9 @@ body {
 }
 
 .tabs-shell {
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 0pxpx;
 }
 
 .tablist-wrap {
@@ -207,6 +210,9 @@ body {
 
 .tab-sticky-cta {
   white-space: nowrap;
+  background: var(--btn);
+  border-color: var(--btn);
+  color: #fff;
 }
 
 .tab {
@@ -238,13 +244,13 @@ button {
 }
 
 .text-link:hover {
-  color: #000;
+  color: var(--link-hover);
 }
 
 .top-nav__links a:hover,
 .footer-columns a:hover,
 .footer-legal a:hover {
-  color: #111;
+  color: var(--link-hover);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -265,12 +271,18 @@ button {
 }
 
 .btn-secondary:hover,
-.tab-sticky-cta:hover,
 .icon-btn:hover,
 .top-nav__menu:hover,
 .footer-social a:hover {
   background: #f3f3f3;
   border-color: #b8b8b8;
+}
+
+.tab-sticky-cta:hover,
+.tab-sticky-cta:focus-visible {
+  background: #111;
+  border-color: #111;
+  color: #fff;
 }
 
 .btn:active,
@@ -286,9 +298,8 @@ button {
 }
 
 .content-block + .content-block {
-  margin-top: 52px;
-  padding-top: 36px;
-  border-top: 1px solid var(--line);
+  margin-top: 72px;
+  border-top: 0;
 }
 
 h2,
@@ -591,11 +602,12 @@ tbody th {
 
 .final-cta {
   background-color: #f1f1f1;
+  padding: 72px 0;
 }
 
 .final-cta .cta-row {
   justify-content: center;
-  margin-top: 14px;
+  margin-top: 32px;
 }
 
 .site-footer {
@@ -607,7 +619,7 @@ tbody th {
 .footer-inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px clamp(20px, 3vw, 36px) 28px;
+  padding: 40px clamp(20px, 3vw, 36px) 0px;
 }
 
 .footer-top {
@@ -627,7 +639,7 @@ tbody th {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--text);
+  color: var(--link);
   text-decoration: none;
   font-weight: 700;
 }
@@ -684,7 +696,7 @@ tbody th {
 }
 
 .footer-columns a {
-  color: var(--muted);
+  color: var(--link);
   text-decoration: none;
   font-size: 0.95rem;
   line-height: 1.4;
@@ -706,9 +718,13 @@ tbody th {
 }
 
 .footer-legal a {
-  color: var(--muted);
+  color: var(--link);
   text-decoration: none;
   font-size: 0.88rem;
+}
+
+a:visited {
+  color: var(--link-hover);
 }
 
 .footer-social {
