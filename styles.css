@@ -213,6 +213,10 @@ li + li {
 }
 
 .testimonial-controls {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 3;
   display: flex;
   gap: 8px;
 }
@@ -234,26 +238,61 @@ li + li {
 }
 
 .testimonial-viewport {
+  position: relative;
   margin-top: 14px;
 }
 
 .testimonial-item {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 18px;
-  min-height: 130px;
-  background: #fff;
+  padding: 80px 128px;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.testimonial-item[hidden] {
+  display: none;
+}
+
+.testimonial-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 300'%3E%3Crect width='420' height='300' fill='%23f1f1f1'/%3E%3Cg fill='none' stroke='%23d2d2d2' stroke-width='12'%3E%3Crect x='104' y='70' width='132' height='98'/%3E%3Crect x='140' y='96' width='160' height='120'/%3E%3C/g%3E%3Crect x='162' y='117' width='116' height='79' fill='none' stroke='%23d2d2d2' stroke-width='8'/%3E%3Ccircle cx='193' cy='137' r='10' fill='%23d8d8d8'/%3E%3Cpath d='M174 181l22-21 16 12 26-26 40 35H174z' fill='%23d8d8d8'/%3E%3C/svg%3E");
+  background-size: 360px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.testimonial-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 0;
 }
 
 .testimonial-quote {
+  position: relative;
+  z-index: 1;
   color: var(--text);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 2rem;
   line-height: 1.5;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
 
 .testimonial-meta {
+  position: relative;
+  z-index: 1;
   margin-top: 10px;
   color: #666;
   font-size: 0.85rem;
@@ -400,5 +439,9 @@ tbody th {
   .testimonial-head {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .testimonial-item {
+    padding: 24px 32px;
   }
 }
