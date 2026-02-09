@@ -9,7 +9,35 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="section hero section-first">
+    <header class="top-nav">
+      <nav class="top-nav__inner container" aria-label="Primary">
+        <a class="top-nav__brand" href="#" aria-label="Defined.ai home">
+          <span class="image-placeholder" aria-hidden="true"></span>
+          <span>Defined.ai</span>
+        </a>
+
+        <div class="top-nav__links" aria-label="Primary links">
+          <a href="#">Browse Marketplace</a>
+          <a href="#">Solutions <span aria-hidden="true">▾</span></a>
+          <a href="#">Resources <span aria-hidden="true">▾</span></a>
+          <a href="#">About <span aria-hidden="true">▾</span></a>
+        </div>
+
+        <div class="top-nav__actions">
+          <button class="btn btn-secondary" type="button">Become a partner</button>
+          <button class="btn btn-primary" type="button">Get in touch</button>
+        </div>
+
+        <!-- Mobile behavior: show a single Menu button and hide links/actions. -->
+        <button class="top-nav__menu" type="button" aria-label="Open menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </nav>
+    </header>
+
+    <section class="section hero section-first">
       <div class="container">
         <p class="kicker">Partnerships</p>
         <h1>Partner with Defined.ai</h1>
@@ -22,7 +50,7 @@
           <a href="#compare" class="text-link">Not sure which partnership fits you?</a>
         </p>
       </div>
-    </header>
+    </section>
 
     <main id="main-content">
       <section class="section">
@@ -38,6 +66,7 @@
                   aria-controls="panel-data"
                   tabindex="0"
                   data-target="panel-data"
+                  data-sticky-cta-label="Apply as a Data Supplier"
                   type="button"
                 >
                   Data Suppliers
@@ -50,11 +79,15 @@
                   aria-controls="panel-services"
                   tabindex="-1"
                   data-target="panel-services"
+                  data-sticky-cta-label="Become a Services Partner"
                   type="button"
                 >
                   Services Suppliers
                 </button>
               </div>
+              <button id="sticky-tab-cta" class="btn btn-primary tab-sticky-cta" type="button">
+                Apply as a Data Supplier
+              </button>
             </div>
 
             <div class="tab-panels" id="tab-panels">
@@ -103,7 +136,7 @@
                 </div>
 
                 <div class="content-block">
-                  <h3>Benefits</h3>
+                  <h2>Benefits</h2>
                   <div class="card-grid">
                     <article class="card">Global Reach</article>
                     <article class="card">Trusted Distribution</article>
@@ -113,12 +146,11 @@
                 </div>
 
                 <section class="content-block how-it-works">
-                  <h3>How it works</h3>
+                  <h2>How it works</h2>
                   <div class="steps">
                     <div class="step">
                       <p class="step-number">01</p>
-                      <div class="image-placeholder"></div>
-                      <h4>Apply &amp; review</h4>
+                      <h3>Apply &amp; review</h3>
                       <p>
                         Submit your dataset details. Our team reviews quality, ethics, and
                         compliance.
@@ -126,24 +158,21 @@
                     </div>
                     <div class="step">
                       <p class="step-number">02</p>
-                      <div class="image-placeholder"></div>
-                      <h4>Onboarding</h4>
+                      <h3>Onboarding</h3>
                       <p>
                         We align on format, documentation, and commercial terms.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">03</p>
-                      <div class="image-placeholder"></div>
-                      <h4>Marketplace launch</h4>
+                      <h3>Marketplace launch</h3>
                       <p>
                         Your datasets become available to enterprise AI buyers.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">04</p>
-                      <div class="image-placeholder"></div>
-                      <h4>Monetize &amp; scale</h4>
+                      <h3>Monetize &amp; scale</h3>
                       <p>
                         Earn revenue while scaling distribution globally.
                       </p>
@@ -153,7 +182,7 @@
 
                 <div class="content-block testimonials" data-testimonials>
                   <div class="testimonial-head">
-                    <h3>Testimonials</h3>
+                    <h2>Testimonials</h2>
                   </div>
                   <div class="testimonial-viewport" aria-live="polite">
                     <article class="testimonial-item" data-testimonial-item>
@@ -199,14 +228,14 @@
                 </div>
 
                 <div class="content-block">
-                  <h3>Trusted by leading AI teams</h3>
+                  <h2>Trusted by leading AI teams</h2>
                   <div class="logo-grid" aria-label="Placeholder logos">
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
+                    <div class="logo-box" aria-hidden="true">NOVA</div>
+                    <div class="logo-box" aria-hidden="true">PIXEL LABS</div>
+                    <div class="logo-box" aria-hidden="true">AXON AI</div>
+                    <div class="logo-box" aria-hidden="true">VERGE DATA</div>
+                    <div class="logo-box" aria-hidden="true">CLOUD MIND</div>
+                    <div class="logo-box" aria-hidden="true">DELTA ML</div>
                   </div>
                 </div>
 
@@ -262,7 +291,7 @@
                 </div>
 
                 <div class="content-block">
-                  <h3>Benefits</h3>
+                  <h2>Benefits</h2>
                   <div class="card-grid">
                     <article class="card">Enterprise Clients</article>
                     <article class="card">Project Visibility</article>
@@ -272,36 +301,32 @@
                 </div>
 
                 <section class="content-block how-it-works">
-                  <h3>How it works</h3>
+                  <h2>How it works</h2>
                   <div class="steps">
                     <div class="step">
                       <p class="step-number">01</p>
-                      <div class="image-placeholder"></div>
-                      <h4>Apply &amp; validate expertise</h4>
+                      <h3>Apply &amp; validate expertise</h3>
                       <p>
                         Share your services, experience, and delivery capabilities.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">02</p>
-                      <div class="image-placeholder"></div>
-                      <h4>Partner onboarding</h4>
+                      <h3>Partner onboarding</h3>
                       <p>
                         We define scope, quality standards, and engagement model.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">03</p>
-                      <div class="image-placeholder"></div>
-                      <h4>Enterprise projects</h4>
+                      <h3>Enterprise projects</h3>
                       <p>
                         Get matched with AI projects aligned to your expertise.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">04</p>
-                      <div class="image-placeholder"></div>
-                      <h4>Long-term collaboration</h4>
+                      <h3>Long-term collaboration</h3>
                       <p>
                         Build recurring engagements with enterprise clients.
                       </p>
@@ -311,7 +336,7 @@
 
                 <div class="content-block testimonials" data-testimonials>
                   <div class="testimonial-head">
-                    <h3>Testimonials</h3>
+                    <h2>Testimonials</h2>
                   </div>
                   <div class="testimonial-viewport" aria-live="polite">
                     <article class="testimonial-item" data-testimonial-item>
@@ -357,14 +382,14 @@
                 </div>
 
                 <div class="content-block">
-                  <h3>Trusted by leading AI teams</h3>
+                  <h2>Trusted by leading AI teams</h2>
                   <div class="logo-grid" aria-label="Placeholder logos">
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
-                    <div class="logo-box" aria-hidden="true">Logo</div>
+                    <div class="logo-box" aria-hidden="true">NOVA</div>
+                    <div class="logo-box" aria-hidden="true">PIXEL LABS</div>
+                    <div class="logo-box" aria-hidden="true">AXON AI</div>
+                    <div class="logo-box" aria-hidden="true">VERGE DATA</div>
+                    <div class="logo-box" aria-hidden="true">CLOUD MIND</div>
+                    <div class="logo-box" aria-hidden="true">DELTA ML</div>
                   </div>
                 </div>
 
@@ -431,11 +456,81 @@
       </section>
     </main>
 
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="footer-brand-logo" href="#" aria-label="Defined.ai home">
+              <span class="image-placeholder" aria-hidden="true"></span>
+              <span>DEFINED.AI</span>
+            </a>
+            <p>© 2026 DefinedCrowd. All rights reserved.</p>
+            <div class="footer-badges" aria-label="Trust badges">
+              <span class="image-placeholder" aria-hidden="true"></span>
+              <span class="image-placeholder" aria-hidden="true"></span>
+              <span class="image-placeholder" aria-hidden="true"></span>
+              <span class="image-placeholder" aria-hidden="true"></span>
+              <span class="image-placeholder" aria-hidden="true"></span>
+              <span class="image-placeholder" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="footer-columns">
+            <section>
+              <h4>Datasets</h4>
+              <a href="#">Marketplace</a>
+            </section>
+            <section>
+              <h4>Solutions</h4>
+              <a href="#">Data Annotation</a>
+              <a href="#">Machine Translation</a>
+              <a href="#">Data Collection</a>
+              <a href="#">Conversational AI</a>
+              <a href="#">Data &amp; Model Evaluation</a>
+              <a href="#">Accelerat.ai</a>
+            </section>
+            <section>
+              <h4>Resources</h4>
+              <a href="#">API documentation</a>
+              <a href="#">Blog</a>
+              <a href="#">Case studies</a>
+              <a href="#">White papers</a>
+              <a href="#">AI Avatars &amp; Voice Bots</a>
+              <a href="#">Events</a>
+              <a href="#">FAQ</a>
+            </section>
+            <section>
+              <h4>About</h4>
+              <a href="#">Who we are</a>
+              <a href="#">Careers</a>
+            </section>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="#">Privacy and Cookie Policy</a>
+            <a href="#">Terms &amp; Conditions (T&amp;M)</a>
+            <a href="#">Data License Agreement</a>
+            <a href="#">Supplier Program</a>
+            <a href="#">CCPA Privacy Statement</a>
+            <a href="#">Whistleblowing Channel</a>
+            <a href="#">Candidate Privacy Statement</a>
+          </div>
+          <div class="footer-social" aria-label="Social links">
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="#" aria-label="LinkedIn">IN</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script>
       (function () {
         var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
         var panels = Array.prototype.slice.call(document.querySelectorAll('[role="tabpanel"]'));
         var panelContainer = document.getElementById('tab-panels');
+        var stickyTabCta = document.getElementById('sticky-tab-cta');
 
         function getPanelByTab(tab) {
           return document.getElementById(tab.getAttribute('aria-controls'));
@@ -455,6 +550,11 @@
           var activePanel = getPanelByTab(tab);
           if (activePanel) {
             activePanel.hidden = false;
+          }
+
+          if (stickyTabCta) {
+            stickyTabCta.textContent =
+              tab.getAttribute('data-sticky-cta-label') || 'Apply as a Data Supplier';
           }
 
           if (focusTab) {
