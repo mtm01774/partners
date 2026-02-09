@@ -646,7 +646,7 @@ li + li {
 }
 
 .faq-list {
-  padding-top: 24px;
+  padding: 24px 256px 0;
   border: 0;
   border-radius: 8px;
   overflow: hidden;
@@ -655,10 +655,12 @@ li + li {
 
 .faq > h2 {
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .faq > p {
   margin-top: 0;
+  text-align: center;
 }
 
 .faq-item + .faq-item {
@@ -715,6 +717,7 @@ li + li {
   padding: 0 18px 16px;
   color: var(--muted);
   line-height: 1.5;
+  text-align: left;
 }
 
 .cta-row {
@@ -797,7 +800,7 @@ body.modal-open {
 .modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(200, 200, 200, 0.55);
+  background: rgba(120, 120, 120, 0.68);
   opacity: 0;
   transition: opacity 220ms ease;
 }
