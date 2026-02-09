@@ -205,6 +205,39 @@ li + li {
   background: #fff;
 }
 
+.how-it-works .steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.how-it-works .step {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: #fff;
+}
+
+.how-it-works .step-number {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #666;
+}
+
+.how-it-works .step h4 {
+  margin: 12px 0 8px;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.how-it-works .step p {
+  font-size: 0.95rem;
+}
+
 .testimonial-head {
   display: flex;
   align-items: center;
@@ -425,6 +458,10 @@ tbody th {
   }
 
   .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-it-works .steps {
     grid-template-columns: 1fr;
   }
 
