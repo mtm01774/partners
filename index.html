@@ -18,9 +18,13 @@
 
         <div class="top-nav__links" aria-label="Primary links">
           <a href="#">Browse Marketplace</a>
-          <a href="#">Solutions <span aria-hidden="true">▾</span></a>
-          <a href="#">Resources <span aria-hidden="true">▾</span></a>
-          <a href="#">About <span aria-hidden="true">▾</span></a>
+          <a href="#"
+            >Solutions <span class="top-nav__chevron" aria-hidden="true"></span
+          ></a>
+          <a href="#"
+            >Resources <span class="top-nav__chevron" aria-hidden="true"></span
+          ></a>
+          <a href="#">About <span class="top-nav__chevron" aria-hidden="true"></span></a>
         </div>
 
         <div class="top-nav__actions">
@@ -43,13 +47,11 @@
           <p class="kicker">Partnerships</p>
           <h1>Partner with Defined.ai</h1>
           <p class="subhead">Two partnership models. One trusted AI data ecosystem.</p>
-          <p class="body-copy">
+          <h5 class="body-copy h5-regular">
             Work with global enterprises building AI responsibly &mdash; whether you provide data
             or specialized AI services.
-          </p>
-          <p>
-            <a href="#" id="compare-trigger" class="text-link">Not sure which partnership fits you?</a>
-          </p>
+          </h5>
+          <a class="btn btn-primary" href="#partnership-models">View partnership models</a>
         </div>
         <div class="hero-media" aria-hidden="true">
           <span class="image-placeholder"></span>
@@ -58,7 +60,49 @@
     </section>
 
     <main id="main-content">
-      <section class="section">
+      <section class="section compare-section" id="compare">
+        <div class="container">
+          <h2>Which partnership fits you?</h2>
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only">
+                Comparison between Data Supplier and Services Supplier partnerships
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Category</span></th>
+                  <th scope="col"><p>Data Supplier</p></th>
+                  <th scope="col"><p>Services Supplier</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><p>Provide</p></th>
+                  <td><p>Datasets and sourcing documentation</p></td>
+                  <td><p>AI services and specialist delivery</p></td>
+                </tr>
+                <tr>
+                  <th scope="row"><p>Revenue Model</p></th>
+                  <td><p>Dataset licensing and marketplace demand</p></td>
+                  <td><p>Project-based and program-based engagements</p></td>
+                </tr>
+                <tr>
+                  <th scope="row"><p>Engagement</p></th>
+                  <td><p>Marketplace distribution with compliance alignment</p></td>
+                  <td><p>Managed service delivery with operational framework</p></td>
+                </tr>
+                <tr>
+                  <th scope="row"><p>Ideal For</p></th>
+                  <td><p>Organizations with scalable, trusted data assets</p></td>
+                  <td><p>Teams with AI delivery, evaluation, or language expertise</p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tabs-section" id="partnership-models">
         <div class="container">
           <div class="tabs-shell" aria-label="Partnership model selector">
             <div class="tablist-wrap">
@@ -90,7 +134,13 @@
                   Services Suppliers
                 </button>
               </div>
-              <button id="sticky-tab-cta" class="btn btn-primary tab-sticky-cta" type="button">
+              <button
+                id="sticky-tab-cta"
+                class="btn btn-primary tab-sticky-cta"
+                type="button"
+                data-open-partner-modal
+                data-mode="data"
+              >
                 Apply as a Data Supplier
               </button>
             </div>
@@ -108,94 +158,101 @@
                   </div>
                   <div class="value-prop-copy">
                     <h2>Monetize ethically sourced data at global scale</h2>
-                    <p>
+                    <h5 class="h5-regular">
                       Join Defined.ai's marketplace to distribute high-quality, compliant
                       datasets to leading AI teams worldwide.
-                    </p>
+                    </h5>
                   </div>
                 </div>
 
-                <div class="content-block">
-                  <h3>This partnership is ideal if you are:</h3>
-                  <ul>
-                    <li>A data provider with proven sourcing practices</li>
-                    <li>Managing unique or hard-to-access datasets</li>
-                    <li>Prepared to meet compliance and documentation standards</li>
-                    <li>Looking for long-term enterprise demand</li>
-                  </ul>
-                </div>
-
-                <div class="content-block two-col">
-                  <article class="panel-box">
-                    <h3>You Provide</h3>
-                    <ul>
-                      <li>Text, audio, image, video, or multimodal data</li>
-                      <li>Domain-specific or hard-to-source datasets</li>
-                      <li>Ethical sourcing and documentation</li>
-                    </ul>
-                  </article>
-                  <article class="panel-box">
-                    <h3>We Provide</h3>
-                    <ul>
-                      <li>Global enterprise buyers</li>
-                      <li>Secure marketplace and distribution</li>
-                      <li>Compliance support (ISO, GDPR, HIPAA)</li>
-                      <li>Commercial and legal guidance</li>
-                    </ul>
-                  </article>
-                </div>
-
-                <div class="content-block">
-                  <h2>Benefits</h2>
-                  <div class="card-grid">
-                    <article class="card">
-                      <span class="image-placeholder" aria-hidden="true"></span>
-                      <span>Global Reach</span>
-                    </article>
-                    <article class="card">
-                      <span class="image-placeholder" aria-hidden="true"></span>
-                      <span>Trusted Distribution</span>
-                    </article>
-                    <article class="card">
-                      <span class="image-placeholder" aria-hidden="true"></span>
-                      <span>Revenue Opportunities</span>
-                    </article>
-                    <article class="card">
-                      <span class="image-placeholder" aria-hidden="true"></span>
-                      <span>Partnership Support</span>
-                    </article>
+                <section class="content-block benefits">
+                  <div class="benefits-inner">
+                    <div class="benefits-intro">
+                      <h2>Why Partner as a Data Supplier?</h2>
+                      <h5 class="h5-regular">
+                        Defined.ai connects trusted partners to global enterprises building AI
+                        responsibly. Whether you provide data or services, our ecosystem helps you
+                        scale, monetize, and operate with confidence.
+                      </h5>
+                    </div>
+                    <div class="benefits-grid">
+                      <article class="benefit-card">
+                        <div class="image-placeholder" aria-hidden="true"></div>
+                        <h5>Global Reach</h5>
+                        <p>
+                          Access enterprise AI teams worldwide through a trusted marketplace and
+                          delivery network.
+                        </p>
+                      </article>
+                      <article class="benefit-card">
+                        <div class="image-placeholder" aria-hidden="true"></div>
+                        <h5>Trusted Distribution</h5>
+                        <p>
+                          Operate within a secure, compliant framework aligned with global
+                          standards and regulations.
+                        </p>
+                      </article>
+                      <article class="benefit-card">
+                        <div class="image-placeholder" aria-hidden="true"></div>
+                        <h5>Revenue Opportunities</h5>
+                        <p>
+                          Generate recurring revenue through licensing, projects, or long-term
+                          programs.
+                        </p>
+                      </article>
+                      <article class="benefit-card">
+                        <div class="image-placeholder" aria-hidden="true"></div>
+                        <h5>Partnership Support</h5>
+                        <p>
+                          Benefit from commercial, operational, and compliance support throughout
+                          the partnership lifecycle.
+                        </p>
+                      </article>
+                    </div>
                   </div>
-                </div>
+                </section>
+
+                <section class="content-block partners-proof">
+                  <h5 class="h5-proof">Join over XXX partners growing their business with Defined.ai</h5>
+                  <div class="logo-grid" aria-label="Placeholder logos">
+                    <div class="logo-box" aria-hidden="true">NOVA</div>
+                    <div class="logo-box" aria-hidden="true">PIXEL LABS</div>
+                    <div class="logo-box" aria-hidden="true">AXON AI</div>
+                    <div class="logo-box" aria-hidden="true">VERGE DATA</div>
+                    <div class="logo-box" aria-hidden="true">CLOUD MIND</div>
+                    <div class="logo-box" aria-hidden="true">DELTA ML</div>
+                  </div>
+                </section>
 
                 <section class="content-block how-it-works">
                   <h2>How it works</h2>
                   <div class="steps">
                     <div class="step">
                       <p class="step-number">01</p>
-                      <h4 class="h4-step">Apply &amp; review</h4>
-                      <p>
+                      <p class="step-title">Apply &amp; review</p>
+                      <p class="step-desc">
                         Submit your dataset details. Our team reviews quality, ethics, and
                         compliance.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">02</p>
-                      <h4 class="h4-step">Onboarding</h4>
-                      <p>
+                      <p class="step-title">Onboarding</p>
+                      <p class="step-desc">
                         We align on format, documentation, and commercial terms.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">03</p>
-                      <h4 class="h4-step">Marketplace launch</h4>
-                      <p>
+                      <p class="step-title">Marketplace launch</p>
+                      <p class="step-desc">
                         Your datasets become available to enterprise AI buyers.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">04</p>
-                      <h4 class="h4-step">Monetize &amp; scale</h4>
-                      <p>
+                      <p class="step-title">Monetize &amp; scale</p>
+                      <p class="step-desc">
                         Earn revenue while scaling distribution globally.
                       </p>
                     </div>
@@ -212,7 +269,7 @@
                         "Defined.ai gave us global exposure while keeping compliance and quality
                         standards clear from day one."
                       </p>
-                      <p class="testimonial-meta">Data Operations Lead, Language Data Company</p>
+                      <h5 class="h5-regular testimonial-meta">Data Operations Lead, Language Data Company</h5>
                     </article>
                     <article class="testimonial-item" data-testimonial-item hidden>
                       <p class="testimonial-quote">
@@ -249,25 +306,13 @@
                   </div>
                 </div>
 
-                <div class="content-block partners-proof">
-                  <h4 class="h4-proof">Join over XXX partners growing their business with Defined.ai</h4>
-                  <div class="logo-grid" aria-label="Placeholder logos">
-                    <div class="logo-box" aria-hidden="true">NOVA</div>
-                    <div class="logo-box" aria-hidden="true">PIXEL LABS</div>
-                    <div class="logo-box" aria-hidden="true">AXON AI</div>
-                    <div class="logo-box" aria-hidden="true">VERGE DATA</div>
-                    <div class="logo-box" aria-hidden="true">CLOUD MIND</div>
-                    <div class="logo-box" aria-hidden="true">DELTA ML</div>
-                  </div>
-                </div>
-
                 <section class="content-block faq" aria-label="Data Suppliers FAQ">
                   <h2>Questions? We've Got You Covered.</h2>
-                  <p>
+                  <h5 class="h5-regular">
                     Answers about data requirements, compliance expectations, and how supplier
                     partnerships work end to end.
                     <a href="#" class="text-link">Explore the full FAQ</a>
-                  </p>
+                  </h5>
                   <div class="faq-list">
                     <article class="faq-item">
                       <button
@@ -429,7 +474,14 @@
                   <div class="tab-panel-cta-inner">
                     <h2>Ready to partner with Defined.ai?</h2>
                     <div class="cta-row">
-                      <button class="btn btn-primary" type="button">Apply as Data Supplier</button>
+                      <button
+                        class="btn btn-primary"
+                        type="button"
+                        data-open-partner-modal
+                        data-mode="data"
+                      >
+                        Apply as Data Supplier
+                      </button>
                       <span class="cta-divider">or</span>
                       <button class="btn btn-secondary" type="button">Get in touch</button>
                     </div>
@@ -458,85 +510,92 @@
                   </div>
                 </div>
 
-                <div class="content-block two-col">
-                  <article class="panel-box">
-                    <h3>You Offer</h3>
-                    <ul>
-                      <li>AI data collection or annotation services</li>
-                      <li>Model evaluation, QA, or human feedback</li>
-                      <li>Domain or language expertise</li>
-                    </ul>
-                  </article>
-                  <article class="panel-box">
-                    <h3>We Provide</h3>
-                    <ul>
-                      <li>Enterprise demand and projects</li>
-                      <li>Program structure and visibility</li>
-                      <li>Compliance and operational framework</li>
-                      <li>Commercial enablement</li>
-                    </ul>
-                  </article>
-                </div>
-
-                <div class="content-block">
-                  <h3>This partnership is ideal if you are:</h3>
-                  <ul>
-                    <li>An AI services team with delivery experience</li>
-                    <li>A specialist in evaluation, QA, or human feedback loops</li>
-                    <li>Operating in regulated or multilingual environments</li>
-                    <li>Seeking recurring enterprise program work</li>
-                  </ul>
-                </div>
-
-                <div class="content-block">
-                  <h2>Benefits</h2>
-                  <div class="card-grid">
-                    <article class="card">
-                      <span class="image-placeholder" aria-hidden="true"></span>
-                      <span>Enterprise Clients</span>
-                    </article>
-                    <article class="card">
-                      <span class="image-placeholder" aria-hidden="true"></span>
-                      <span>Project Visibility</span>
-                    </article>
-                    <article class="card">
-                      <span class="image-placeholder" aria-hidden="true"></span>
-                      <span>Operational Support</span>
-                    </article>
-                    <article class="card">
-                      <span class="image-placeholder" aria-hidden="true"></span>
-                      <span>Long-Term Collaboration</span>
-                    </article>
+                <section class="content-block benefits">
+                  <div class="benefits-inner">
+                    <div class="benefits-intro">
+                      <h2>Why Partner as a Services Supplier?</h2>
+                      <h5 class="h5-regular">
+                        Deliver enterprise-ready AI services through a structured partnership
+                        model. Get access to relevant projects, clear delivery expectations, and
+                        operational support to scale sustainably.
+                      </h5>
+                    </div>
+                    <div class="benefits-grid">
+                      <article class="benefit-card">
+                        <div class="image-placeholder" aria-hidden="true"></div>
+                        <h5>Enterprise Project Access</h5>
+                        <p>
+                          Work with global organizations on AI initiatives aligned with your
+                          expertise and delivery capacity.
+                        </p>
+                      </article>
+                      <article class="benefit-card">
+                        <div class="image-placeholder" aria-hidden="true"></div>
+                        <h5>Clear Delivery Framework</h5>
+                        <p>
+                          Operate with defined scopes, quality standards, and workflows that reduce
+                          ambiguity and speed up execution.
+                        </p>
+                      </article>
+                      <article class="benefit-card">
+                        <div class="image-placeholder" aria-hidden="true"></div>
+                        <h5>Scalable Revenue Streams</h5>
+                        <p>
+                          Build consistent revenue through project-based work, ongoing programs,
+                          and long-term engagements.
+                        </p>
+                      </article>
+                      <article class="benefit-card">
+                        <div class="image-placeholder" aria-hidden="true"></div>
+                        <h5>Operational &amp; Compliance Support</h5>
+                        <p>
+                          Leverage Defined.ai&rsquo;s operational guidance and compliance framework
+                          to deliver with confidence at enterprise level.
+                        </p>
+                      </article>
+                    </div>
                   </div>
-                </div>
+                </section>
+
+                <section class="content-block partners-proof">
+                  <h5 class="h5-proof">Join over XXX partners growing their business with Defined.ai</h5>
+                  <div class="logo-grid" aria-label="Placeholder logos">
+                    <div class="logo-box" aria-hidden="true">NOVA</div>
+                    <div class="logo-box" aria-hidden="true">PIXEL LABS</div>
+                    <div class="logo-box" aria-hidden="true">AXON AI</div>
+                    <div class="logo-box" aria-hidden="true">VERGE DATA</div>
+                    <div class="logo-box" aria-hidden="true">CLOUD MIND</div>
+                    <div class="logo-box" aria-hidden="true">DELTA ML</div>
+                  </div>
+                </section>
 
                 <section class="content-block how-it-works">
                   <h2>How it works</h2>
                   <div class="steps">
                     <div class="step">
                       <p class="step-number">01</p>
-                      <h4 class="h4-step">Apply &amp; validate expertise</h4>
+                      <p class="step-title">Apply &amp; validate expertise</p>
                       <p>
                         Share your services, experience, and delivery capabilities.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">02</p>
-                      <h4 class="h4-step">Partner onboarding</h4>
+                      <p class="step-title">Partner onboarding</p>
                       <p>
                         We define scope, quality standards, and engagement model.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">03</p>
-                      <h4 class="h4-step">Enterprise projects</h4>
+                      <p class="step-title">Enterprise projects</p>
                       <p>
                         Get matched with AI projects aligned to your expertise.
                       </p>
                     </div>
                     <div class="step">
                       <p class="step-number">04</p>
-                      <h4 class="h4-step">Long-term collaboration</h4>
+                      <p class="step-title">Long-term collaboration</p>
                       <p>
                         Build recurring engagements with enterprise clients.
                       </p>
@@ -591,25 +650,13 @@
                   </div>
                 </div>
 
-                <div class="content-block partners-proof">
-                  <h4 class="h4-proof">Join over XXX partners growing their business with Defined.ai</h4>
-                  <div class="logo-grid" aria-label="Placeholder logos">
-                    <div class="logo-box" aria-hidden="true">NOVA</div>
-                    <div class="logo-box" aria-hidden="true">PIXEL LABS</div>
-                    <div class="logo-box" aria-hidden="true">AXON AI</div>
-                    <div class="logo-box" aria-hidden="true">VERGE DATA</div>
-                    <div class="logo-box" aria-hidden="true">CLOUD MIND</div>
-                    <div class="logo-box" aria-hidden="true">DELTA ML</div>
-                  </div>
-                </div>
-
                 <section class="content-block faq" aria-label="Services Suppliers FAQ">
                   <h2>Questions? We've Got You Covered.</h2>
-                  <p>
+                  <h5 class="h5-regular">
                     Answers about service scope, project matching, quality standards, and
                     engagement models for services partners.
                     <a href="#" class="text-link">Explore the full FAQ</a>
-                  </p>
+                  </h5>
                   <div class="faq-list">
                     <article class="faq-item">
                       <button
@@ -771,7 +818,14 @@
                   <div class="tab-panel-cta-inner">
                     <h2>Ready to partner with Defined.ai?</h2>
                     <div class="cta-row">
-                      <button class="btn btn-primary" type="button">Become a Services Partner</button>
+                      <button
+                        class="btn btn-primary"
+                        type="button"
+                        data-open-partner-modal
+                        data-mode="services"
+                      >
+                        Become a Services Partner
+                      </button>
                       <span class="cta-divider">or</span>
                       <button class="btn btn-secondary" type="button">Get in touch</button>
                     </div>
@@ -854,49 +908,239 @@
       </div>
     </footer>
 
-    <div class="modal" id="compare-modal" role="dialog" aria-modal="true" aria-labelledby="compare-modal-title" hidden>
-      <div class="modal__backdrop" data-modal-close></div>
-      <div class="modal__panel" role="document">
-        <button class="modal__close" type="button" aria-label="Close dialog" data-modal-close>
-          <span aria-hidden="true"></span>
-        </button>
-        <h2 id="compare-modal-title">Compare partnerships</h2>
-        <div class="table-wrap">
-          <table>
-            <caption class="sr-only">
-              Comparison between Data Supplier and Services Supplier partnerships
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Category</th>
-                <th scope="col">Data Supplier</th>
-                <th scope="col">Services Supplier</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Provide</th>
-                <td>Datasets and sourcing documentation</td>
-                <td>AI services and specialist delivery</td>
-              </tr>
-              <tr>
-                <th scope="row">Revenue Model</th>
-                <td>Dataset licensing and marketplace demand</td>
-                <td>Project-based and program-based engagements</td>
-              </tr>
-              <tr>
-                <th scope="row">Engagement</th>
-                <td>Marketplace distribution with compliance alignment</td>
-                <td>Managed service delivery with operational framework</td>
-              </tr>
-              <tr>
-                <th scope="row">Ideal For</th>
-                <td>Organizations with scalable, trusted data assets</td>
-                <td>Teams with AI delivery, evaluation, or language expertise</td>
-              </tr>
-            </tbody>
-          </table>
+    <div
+      class="partner-modal"
+      id="partner-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="partner-modal-title"
+      tabindex="-1"
+      hidden
+    >
+      <div class="partner-modal__backdrop" data-partner-modal-close></div>
+      <div class="partner-modal__panel" role="document">
+        <div class="partner-modal__header">
+          <h2 id="partner-modal-title">Apply as a Data Supplier</h2>
+          <button class="partner-modal__close" type="button" aria-label="Close" data-partner-modal-close>
+            &times;
+          </button>
         </div>
+
+        <form class="partner-form" id="partner-form" novalidate>
+          <div class="form-common">
+            <div class="form-grid">
+              <div class="field">
+                <label for="company-name">Company name</label>
+                <input id="company-name" name="company_name" type="text" required />
+              </div>
+              <div class="field">
+                <label for="company-website">Company website</label>
+                <input id="company-website" name="company_website" type="url" required />
+              </div>
+              <div class="field">
+                <label for="company-size">Company size</label>
+                <select id="company-size" name="company_size" required>
+                  <option value="">Select</option>
+                  <option>1-10</option>
+                  <option>11-50</option>
+                  <option>51-200</option>
+                  <option>201-500</option>
+                  <option>500+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="country-region">Country / Region</label>
+                <input id="country-region" name="country_region" type="text" required />
+              </div>
+              <div class="field">
+                <label for="contact-name">Primary contact name</label>
+                <input id="contact-name" name="contact_name" type="text" required />
+              </div>
+              <div class="field">
+                <label for="work-email">Work email</label>
+                <input id="work-email" name="work_email" type="email" required />
+              </div>
+              <div class="field">
+                <label for="job-title">Role / Job title (optional)</label>
+                <input id="job-title" name="job_title" type="text" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="notes-message">Notes / message (optional)</label>
+              <textarea id="notes-message" name="notes_message" rows="3"></textarea>
+            </div>
+          </div>
+
+          <fieldset class="form-mode form-data" data-mode="data">
+            <legend>Data Supplier details</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label>Data types provided</label>
+                <div class="check-grid">
+                  <label><input type="checkbox" name="data_types" value="Text" /> Text</label>
+                  <label><input type="checkbox" name="data_types" value="Audio" /> Audio</label>
+                  <label><input type="checkbox" name="data_types" value="Image" /> Image</label>
+                  <label><input type="checkbox" name="data_types" value="Video" /> Video</label>
+                  <label><input type="checkbox" name="data_types" value="Multimodal" /> Multimodal</label>
+                </div>
+              </div>
+              <div class="field">
+                <label>Domain / industry</label>
+                <div class="check-grid">
+                  <label><input type="checkbox" name="data_domain" value="Finance" /> Finance</label>
+                  <label><input type="checkbox" name="data_domain" value="Healthcare" /> Healthcare</label>
+                  <label><input type="checkbox" name="data_domain" value="Retail" /> Retail</label>
+                  <label><input type="checkbox" name="data_domain" value="Legal" /> Legal</label>
+                  <label><input type="checkbox" name="data_domain" value="Other" /> Other</label>
+                </div>
+                <input type="text" name="data_domain_other" placeholder="Other domain (optional)" />
+              </div>
+              <div class="field">
+                <label for="data-languages">Languages covered</label>
+                <input id="data-languages" name="data_languages" type="text" />
+              </div>
+              <div class="field">
+                <label for="dataset-size">Approximate dataset size</label>
+                <select id="dataset-size" name="dataset_size">
+                  <option value="">Select</option>
+                  <option>&lt;10k</option>
+                  <option>10k-100k</option>
+                  <option>100k-1M</option>
+                  <option>1M+</option>
+                </select>
+              </div>
+              <div class="field form-grid-span-2">
+                <label for="dataset-description">Short dataset description</label>
+                <textarea id="dataset-description" name="dataset_description" rows="3" required></textarea>
+              </div>
+              <div class="field">
+                <label>Data format</label>
+                <div class="check-grid">
+                  <label><input type="checkbox" name="data_format" value="Raw" /> Raw</label>
+                  <label><input type="checkbox" name="data_format" value="Annotated/Labeled" /> Annotated/Labeled</label>
+                  <label><input type="checkbox" name="data_format" value="Structured" /> Structured</label>
+                  <label><input type="checkbox" name="data_format" value="Unstructured" /> Unstructured</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="update-frequency">Update frequency</label>
+                <select id="update-frequency" name="update_frequency">
+                  <option value="">Select</option>
+                  <option>One-time</option>
+                  <option>Periodic</option>
+                  <option>Continuous</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Consent and usage rights</label>
+                <div class="check-grid">
+                  <label><input type="radio" name="consent_rights" value="Yes" required /> Yes</label>
+                  <label><input type="radio" name="consent_rights" value="Partially" /> Partially</label>
+                  <label><input type="radio" name="consent_rights" value="Not yet" /> Not yet</label>
+                </div>
+              </div>
+              <div class="field">
+                <label>Documentation available</label>
+                <div class="check-grid">
+                  <label><input type="radio" name="documentation_available" value="Yes" required /> Yes</label>
+                  <label><input type="radio" name="documentation_available" value="In progress" /> In progress</label>
+                  <label><input type="radio" name="documentation_available" value="No" /> No</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="monetization-model">Preferred monetization model</label>
+                <select id="monetization-model" name="monetization_model">
+                  <option value="">Select</option>
+                  <option>Licensing</option>
+                  <option>Revenue share</option>
+                  <option>Open to discussion</option>
+                </select>
+              </div>
+              <div class="field form-grid-span-2">
+                <label class="checkbox-inline">
+                  <input
+                    type="checkbox"
+                    name="data_confirmation"
+                    required
+                  />
+                  I confirm I have the rights to share this information for evaluation purposes.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-mode form-services" data-mode="services" hidden>
+            <legend>Services Supplier details</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label>Services offered</label>
+                <div class="check-grid">
+                  <label><input type="checkbox" name="services_offered" value="Data collection" /> Data collection</label>
+                  <label><input type="checkbox" name="services_offered" value="Data annotation" /> Data annotation</label>
+                  <label><input type="checkbox" name="services_offered" value="Model evaluation/QA" /> Model evaluation/QA</label>
+                  <label><input type="checkbox" name="services_offered" value="Human feedback" /> Human feedback</label>
+                  <label><input type="checkbox" name="services_offered" value="Domain/language expertise" /> Domain/language expertise</label>
+                  <label><input type="checkbox" name="services_offered" value="Other" /> Other</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="delivery-regions">Delivery regions / languages</label>
+                <input id="delivery-regions" name="delivery_regions" type="text" />
+              </div>
+              <div class="field">
+                <label for="engagement-type">Typical engagement type</label>
+                <select id="engagement-type" name="engagement_type">
+                  <option value="">Select</option>
+                  <option>Project-based</option>
+                  <option>Program-based</option>
+                  <option>Both</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="team-capacity">Team capacity</label>
+                <select id="team-capacity" name="team_capacity">
+                  <option value="">Select</option>
+                  <option>1-5</option>
+                  <option>6-20</option>
+                  <option>21-50</option>
+                  <option>50+</option>
+                </select>
+              </div>
+              <div class="field form-grid-span-2">
+                <label for="experience-examples">Relevant experience / case examples</label>
+                <textarea id="experience-examples" name="experience_examples" rows="3" required></textarea>
+              </div>
+              <div class="field form-grid-span-2">
+                <label for="quality-process">Quality standards / process (optional)</label>
+                <textarea id="quality-process" name="quality_process" rows="3"></textarea>
+              </div>
+              <div class="field">
+                <label for="start-timeframe">Preferred start timeframe</label>
+                <select id="start-timeframe" name="start_timeframe">
+                  <option value="">Select</option>
+                  <option>ASAP</option>
+                  <option>2-4 weeks</option>
+                  <option>1-3 months</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+              <div class="field form-grid-span-2">
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="services_confirmation" required />
+                  I confirm the information provided is accurate for evaluation purposes.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" id="partner-modal-submit">
+              Submit application
+            </button>
+            <button class="btn btn-secondary" type="button" data-partner-modal-close>Cancel</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -905,14 +1149,23 @@
         var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
         var panels = Array.prototype.slice.call(document.querySelectorAll('[role="tabpanel"]'));
         var panelContainer = document.getElementById('tab-panels');
+        var tablistWrap = document.querySelector('.tablist-wrap');
         var stickyTabCta = document.getElementById('sticky-tab-cta');
-        var compareTrigger = document.getElementById('compare-trigger');
-        var compareModal = document.getElementById('compare-modal');
-        var compareModalClose = compareModal ? compareModal.querySelector('.modal__close') : null;
-        var focusableSelector =
-          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
-        var previousActiveElement = null;
-        var modalAnimationTimer = null;
+        var partnerModal = document.getElementById('partner-modal');
+        var partnerForm = document.getElementById('partner-form');
+        var partnerModalTitle = document.getElementById('partner-modal-title');
+        var partnerModalSubmit = document.getElementById('partner-modal-submit');
+        var modalOpeners = Array.prototype.slice.call(
+          document.querySelectorAll('[data-open-partner-modal]')
+        );
+        var modalClosers = Array.prototype.slice.call(
+          document.querySelectorAll('[data-partner-modal-close]')
+        );
+        var modalFieldsets = partnerForm
+          ? Array.prototype.slice.call(partnerForm.querySelectorAll('.form-mode[data-mode]'))
+          : [];
+        var modalLastTrigger = null;
+        var modalHideTimer = null;
 
         function getPanelByTab(tab) {
           return document.getElementById(tab.getAttribute('aria-controls'));
@@ -937,6 +1190,10 @@
           if (stickyTabCta) {
             stickyTabCta.textContent =
               tab.getAttribute('data-sticky-cta-label') || 'Apply as a Data Supplier';
+            stickyTabCta.setAttribute(
+              'data-mode',
+              tab.getAttribute('aria-controls') === 'panel-services' ? 'services' : 'data'
+            );
           }
 
           if (focusTab) {
@@ -1100,89 +1357,224 @@
           });
         }
 
-        function trapModalFocus(event) {
-          if (!compareModal || compareModal.hidden || event.key !== 'Tab') {
+        function updateStickyTabsState() {
+          if (!tablistWrap) {
             return;
           }
 
-          var focusableElements = Array.prototype.slice.call(
-            compareModal.querySelectorAll(focusableSelector)
-          ).filter(function (element) {
-            return !element.hasAttribute('hidden');
+          var navHeight = parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue('--top-nav-height')
+          );
+          var topOffset = Number.isNaN(navHeight) ? 76 : navHeight;
+          var stickyStart = tablistWrap.offsetTop - topOffset;
+          var isStuck = window.scrollY >= stickyStart;
+
+          tablistWrap.classList.toggle('is-stuck', isStuck);
+        }
+
+        function setModalMode(mode) {
+          var normalizedMode = mode === 'services' ? 'services' : 'data';
+
+          if (!partnerModalTitle || !partnerModalSubmit) {
+            return;
+          }
+
+          if (normalizedMode === 'services') {
+            partnerModalTitle.textContent = 'Become a Services Partner';
+            partnerModalSubmit.textContent = 'Submit application';
+          } else {
+            partnerModalTitle.textContent = 'Apply as a Data Supplier';
+            partnerModalSubmit.textContent = 'Submit application';
+          }
+
+          modalFieldsets.forEach(function (fieldset) {
+            var isActive = fieldset.getAttribute('data-mode') === normalizedMode;
+            fieldset.hidden = !isActive;
+            Array.prototype.forEach.call(
+              fieldset.querySelectorAll('input, select, textarea, button'),
+              function (field) {
+                field.disabled = !isActive;
+              }
+            );
           });
+        }
 
-          if (!focusableElements.length) {
-            return;
+        function getModalFocusableElements() {
+          if (!partnerModal || partnerModal.hidden) {
+            return [];
           }
 
-          var firstElement = focusableElements[0];
-          var lastElement = focusableElements[focusableElements.length - 1];
+          var selector =
+            'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-          if (event.shiftKey && document.activeElement === firstElement) {
-            event.preventDefault();
-            lastElement.focus();
-          } else if (!event.shiftKey && document.activeElement === lastElement) {
-            event.preventDefault();
-            firstElement.focus();
+          return Array.prototype.slice
+            .call(partnerModal.querySelectorAll(selector))
+            .filter(function (el) {
+              return el.offsetParent !== null;
+            });
+        }
+
+        function clearFieldError(fieldWrap) {
+          if (!fieldWrap) {
+            return;
+          }
+          fieldWrap.classList.remove('field-error');
+          var error = fieldWrap.querySelector('.error-text');
+          if (error) {
+            error.remove();
           }
         }
 
-        function openCompareModal() {
-          if (!compareModal) {
+        function showFieldError(input, message) {
+          var fieldWrap = input.closest('.field');
+          if (!fieldWrap) {
             return;
           }
 
-          if (modalAnimationTimer) {
-            window.clearTimeout(modalAnimationTimer);
-            modalAnimationTimer = null;
+          clearFieldError(fieldWrap);
+          fieldWrap.classList.add('field-error');
+          var error = document.createElement('p');
+          error.className = 'error-text';
+          error.textContent = message;
+          fieldWrap.appendChild(error);
+        }
+
+        function clearFormErrors() {
+          if (!partnerForm) {
+            return;
+          }
+          Array.prototype.forEach.call(partnerForm.querySelectorAll('.field'), clearFieldError);
+        }
+
+        function validatePartnerForm() {
+          if (!partnerForm) {
+            return true;
           }
 
-          previousActiveElement = document.activeElement;
-          compareModal.hidden = false;
+          clearFormErrors();
+
+          var requiredFields = Array.prototype.slice
+            .call(partnerForm.querySelectorAll('[required]'))
+            .filter(function (field) {
+              return !field.disabled;
+            });
+          var invalid = [];
+          var checkedRadioNames = {};
+
+          requiredFields.forEach(function (field) {
+            if (field.type === 'radio') {
+              if (checkedRadioNames[field.name]) {
+                return;
+              }
+              checkedRadioNames[field.name] = true;
+              var group = Array.prototype.slice.call(
+                partnerForm.querySelectorAll('input[type="radio"][name="' + field.name + '"]')
+              );
+              var hasChecked = group.some(function (radio) {
+                return !radio.disabled && radio.checked;
+              });
+              if (!hasChecked) {
+                invalid.push(field);
+              }
+              return;
+            }
+
+            if (field.type === 'checkbox') {
+              if (!field.checked) {
+                invalid.push(field);
+              }
+              return;
+            }
+
+            if (!field.value.trim()) {
+              invalid.push(field);
+              return;
+            }
+
+            if (!field.checkValidity()) {
+              invalid.push(field);
+            }
+          });
+
+          invalid.forEach(function (field) {
+            showFieldError(field, 'Please complete this field.');
+          });
+
+          if (invalid.length > 0) {
+            invalid[0].focus();
+            return false;
+          }
+
+          return true;
+        }
+
+        function openPartnerModal(mode, triggerEl) {
+          if (!partnerModal || !partnerForm) {
+            return;
+          }
+
+          modalLastTrigger = triggerEl || document.activeElement;
+          if (modalHideTimer) {
+            window.clearTimeout(modalHideTimer);
+            modalHideTimer = null;
+          }
+          partnerForm.reset();
+          clearFormErrors();
+          setModalMode(mode);
+
+          partnerModal.hidden = false;
           document.body.classList.add('modal-open');
           requestAnimationFrame(function () {
-            compareModal.classList.add('is-open');
+            partnerModal.classList.add('is-open');
+            var firstField = partnerForm.querySelector(
+              '.form-common input:not([disabled]), .form-common select:not([disabled]), .form-common textarea:not([disabled])'
+            );
+            if (firstField) {
+              firstField.focus();
+            } else {
+              partnerModal.focus();
+            }
           });
-          if (compareModalClose) {
-            compareModalClose.focus();
-          }
         }
 
-        function closeCompareModal() {
-          if (!compareModal || compareModal.hidden) {
+        function closePartnerModal() {
+          if (!partnerModal || partnerModal.hidden) {
             return;
           }
 
-          compareModal.classList.remove('is-open');
-          modalAnimationTimer = window.setTimeout(function () {
-            compareModal.hidden = true;
-            document.body.classList.remove('modal-open');
-            if (previousActiveElement) {
-              previousActiveElement.focus();
-            } else if (compareTrigger) {
-              compareTrigger.focus();
-            }
-            modalAnimationTimer = null;
-          }, 220);
+          partnerModal.classList.remove('is-open');
+          document.body.classList.remove('modal-open');
+          modalHideTimer = window.setTimeout(function () {
+            partnerModal.hidden = true;
+            modalHideTimer = null;
+          }, 180);
+
+          if (modalLastTrigger && typeof modalLastTrigger.focus === 'function') {
+            modalLastTrigger.focus();
+          }
         }
 
-        if (compareTrigger) {
-          compareTrigger.addEventListener('click', function (event) {
+        function handleModalTrap(event) {
+          if (!partnerModal || partnerModal.hidden || event.key !== 'Tab') {
+            return;
+          }
+
+          var focusable = getModalFocusableElements();
+          if (!focusable.length) {
             event.preventDefault();
-            openCompareModal();
-          });
-        }
+            return;
+          }
 
-        if (compareModal) {
-          compareModal.addEventListener('click', function (event) {
-            if (
-              event.target &&
-              event.target.closest &&
-              event.target.closest('[data-modal-close]')
-            ) {
-              closeCompareModal();
-            }
-          });
+          var first = focusable[0];
+          var last = focusable[focusable.length - 1];
+
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
         }
 
         tabs.forEach(function (tab) {
@@ -1218,19 +1610,57 @@
           });
         });
 
+        modalOpeners.forEach(function (trigger) {
+          trigger.addEventListener('click', function (event) {
+            event.preventDefault();
+            openPartnerModal(trigger.getAttribute('data-mode'), trigger);
+          });
+        });
+
+        modalClosers.forEach(function (closer) {
+          closer.addEventListener('click', function () {
+            closePartnerModal();
+          });
+        });
+
+        if (partnerModal) {
+          partnerModal.addEventListener('click', function (event) {
+            if (event.target === partnerModal) {
+              closePartnerModal();
+            }
+          });
+          partnerModal.addEventListener('keydown', handleModalTrap);
+        }
+
+        if (partnerForm) {
+          partnerForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            if (!validatePartnerForm()) {
+              return;
+            }
+            closePartnerModal();
+          });
+        }
+
+        document.addEventListener('keydown', function (event) {
+          if (!partnerModal || partnerModal.hidden) {
+            return;
+          }
+          if (event.key === 'Escape') {
+            event.preventDefault();
+            closePartnerModal();
+          }
+        });
+
         setActiveTab(tabs[0], false);
         initTestimonials();
         initFaqAccordions();
         syncPanelHeight();
-
-        document.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape' && compareModal && !compareModal.hidden) {
-            closeCompareModal();
-          }
-          trapModalFocus(event);
-        });
+        updateStickyTabsState();
 
         window.addEventListener('resize', syncPanelHeight);
+        window.addEventListener('resize', updateStickyTabsState);
+        window.addEventListener('scroll', updateStickyTabsState, { passive: true });
       })();
     </script>
   </body>
