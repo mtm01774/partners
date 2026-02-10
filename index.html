@@ -6,7 +6,7 @@
     <title>Defined.ai Partnerships Wireframe</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-version="v1">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="top-nav">
@@ -46,12 +46,25 @@
         <div class="hero-content">
           <p class="kicker">Partnerships</p>
           <h1>Partner with Defined.ai</h1>
-          <p class="subhead">Two partnership models. One trusted AI data ecosystem.</p>
-          <h5 class="body-copy h5-regular">
+          <p class="subhead" data-version="v1">Two partnership models. One trusted AI data ecosystem.</p>
+          <p class="subhead" data-version="v2">Choose the partnership path that fits your business.</p>
+          <h5 class="body-copy h5-regular" data-version="v1">
             Work with global enterprises building AI responsibly &mdash; whether you provide data
             or specialized AI services.
           </h5>
-          <a class="btn btn-primary" href="#partnership-models">View partnership models</a>
+          <h5 class="body-copy h5-regular" data-version="v2">
+            Apply as a data supplier or a services partner. Share your details and we&rsquo;ll
+            follow up if there&rsquo;s a fit.
+          </h5>
+          <a class="btn btn-primary" href="#partnership-models" data-version="v1">View partnership models</a>
+          <div class="cta-row" data-version="v2">
+            <button class="btn btn-primary" type="button" data-open-form="true" data-mode="data">
+              Apply as a Data Supplier
+            </button>
+            <button class="btn btn-secondary" type="button" data-open-form="true" data-mode="services">
+              Become a Services Partner
+            </button>
+          </div>
         </div>
         <div class="hero-media" aria-hidden="true">
           <span class="image-placeholder"></span>
@@ -138,7 +151,8 @@
                 id="sticky-tab-cta"
                 class="btn btn-primary tab-sticky-cta"
                 type="button"
-                data-open-partner-modal
+                data-version="v1"
+                data-open-form="true"
                 data-mode="data"
               >
                 Apply as a Data Supplier
@@ -470,14 +484,14 @@
                   </div>
                 </section>
 
-                <div class="content-block tab-panel-cta">
+                <div class="content-block tab-panel-cta" data-version="v1">
                   <div class="tab-panel-cta-inner">
                     <h2>Ready to partner with Defined.ai?</h2>
                     <div class="cta-row">
                       <button
                         class="btn btn-primary"
                         type="button"
-                        data-open-partner-modal
+                        data-open-form="true"
                         data-mode="data"
                       >
                         Apply as Data Supplier
@@ -814,14 +828,14 @@
                   </div>
                 </section>
 
-                <div class="content-block tab-panel-cta">
+                <div class="content-block tab-panel-cta" data-version="v1">
                   <div class="tab-panel-cta-inner">
                     <h2>Ready to partner with Defined.ai?</h2>
                     <div class="cta-row">
                       <button
                         class="btn btn-primary"
                         type="button"
-                        data-open-partner-modal
+                        data-open-form="true"
                         data-mode="services"
                       >
                         Become a Services Partner
@@ -831,9 +845,23 @@
                     </div>
                   </div>
                 </div>
+
               </section>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="partner-apply" class="section partner-apply" data-version="v2">
+        <div class="partner-apply__inner">
+          <header class="partner-apply__header">
+            <h2 id="partner-apply-title">Apply as a Data Supplier</h2>
+            <p id="partner-apply-description">
+              Tell us about your datasets, scale, and compliance. We&rsquo;ll review your
+              submission and get back to you.
+            </p>
+          </header>
+          <div id="partner-apply-form-slot"></div>
         </div>
       </section>
 
@@ -915,6 +943,7 @@
       aria-modal="true"
       aria-labelledby="partner-modal-title"
       tabindex="-1"
+      data-version="v1"
       hidden
     >
       <div class="partner-modal__backdrop" data-partner-modal-close></div>
@@ -1144,6 +1173,19 @@
       </div>
     </div>
 
+    <div class="version-toggle" aria-label="Version switcher">
+      <p>Version</p>
+      <div class="version-toggle__buttons" role="group" aria-label="Choose version">
+        <button type="button" class="version-toggle__btn" data-set-version="v1" aria-pressed="true">
+          V1
+        </button>
+        <button type="button" class="version-toggle__btn" data-set-version="v2" aria-pressed="false">
+          V2
+        </button>
+      </div>
+      <small>Presentation only</small>
+    </div>
+
     <script>
       (function () {
         var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
@@ -1152,11 +1194,19 @@
         var tablistWrap = document.querySelector('.tablist-wrap');
         var stickyTabCta = document.getElementById('sticky-tab-cta');
         var partnerModal = document.getElementById('partner-modal');
+        var partnerModalPanel = partnerModal ? partnerModal.querySelector('.partner-modal__panel') : null;
         var partnerForm = document.getElementById('partner-form');
         var partnerModalTitle = document.getElementById('partner-modal-title');
         var partnerModalSubmit = document.getElementById('partner-modal-submit');
+        var inlineFormSection = document.getElementById('partner-apply');
+        var inlineFormSlot = document.getElementById('partner-apply-form-slot');
+        var inlineFormTitle = document.getElementById('partner-apply-title');
+        var inlineFormDescription = document.getElementById('partner-apply-description');
         var modalOpeners = Array.prototype.slice.call(
-          document.querySelectorAll('[data-open-partner-modal]')
+          document.querySelectorAll('[data-open-form="true"]')
+        );
+        var versionButtons = Array.prototype.slice.call(
+          document.querySelectorAll('[data-set-version]')
         );
         var modalClosers = Array.prototype.slice.call(
           document.querySelectorAll('[data-partner-modal-close]')
@@ -1196,9 +1246,15 @@
             );
           }
 
+          if (document.body.getAttribute('data-version') === 'v2' && partnerForm) {
+            setModalMode(tab.getAttribute('aria-controls') === 'panel-services' ? 'services' : 'data');
+          }
+
           if (focusTab) {
             tab.focus();
           }
+
+          positionInlineFormSection();
         }
 
         function moveFocus(currentTab, direction) {
@@ -1372,20 +1428,98 @@
           tablistWrap.classList.toggle('is-stuck', isStuck);
         }
 
-        function setModalMode(mode) {
-          var normalizedMode = mode === 'services' ? 'services' : 'data';
-
-          if (!partnerModalTitle || !partnerModalSubmit) {
+        function setInlineHeader(mode) {
+          if (!inlineFormTitle || !inlineFormDescription) {
             return;
           }
 
-          if (normalizedMode === 'services') {
-            partnerModalTitle.textContent = 'Become a Services Partner';
-            partnerModalSubmit.textContent = 'Submit application';
+          if (mode === 'services') {
+            inlineFormTitle.textContent = 'Become a Services Partner';
+            inlineFormDescription.textContent =
+              'Tell us about your services, capacity, and experience. We’ll review your submission and get back to you.';
           } else {
-            partnerModalTitle.textContent = 'Apply as a Data Supplier';
-            partnerModalSubmit.textContent = 'Submit application';
+            inlineFormTitle.textContent = 'Apply as a Data Supplier';
+            inlineFormDescription.textContent =
+              'Tell us about your datasets, scale, and compliance. We’ll review your submission and get back to you.';
           }
+        }
+
+        function mountPartnerForm(version) {
+          if (!partnerForm || !inlineFormSlot || !partnerModalPanel) {
+            return;
+          }
+
+          if (version === 'v1') {
+            partnerModalPanel.appendChild(partnerForm);
+          } else {
+            inlineFormSlot.appendChild(partnerForm);
+          }
+        }
+
+        function positionInlineFormSection() {
+          if (!inlineFormSection) {
+            return;
+          }
+
+          if (document.body.getAttribute('data-version') === 'v2') {
+            var activePanel = panels.find(function (panel) {
+              return !panel.hidden;
+            });
+            if (!activePanel) {
+              return;
+            }
+
+            var faqSection = activePanel.querySelector('.content-block.faq');
+            if (faqSection) {
+              activePanel.insertBefore(inlineFormSection, faqSection);
+            } else {
+              activePanel.appendChild(inlineFormSection);
+            }
+            return;
+          }
+
+          var tabsSection = document.getElementById('partnership-models');
+          if (tabsSection && tabsSection.parentNode) {
+            tabsSection.parentNode.insertBefore(inlineFormSection, tabsSection.nextSibling);
+          }
+        }
+
+        function setVersion(version) {
+          var nextVersion = version === 'v1' ? 'v1' : 'v2';
+          document.body.setAttribute('data-version', nextVersion);
+
+          versionButtons.forEach(function (btn) {
+            btn.setAttribute('aria-pressed', String(btn.getAttribute('data-set-version') === nextVersion));
+          });
+
+          if (nextVersion === 'v2') {
+            closePartnerModal();
+          }
+
+          mountPartnerForm(nextVersion);
+          positionInlineFormSection();
+        }
+
+        function setModalMode(mode) {
+          var normalizedMode = mode === 'services' ? 'services' : 'data';
+
+          if (normalizedMode === 'services') {
+            if (partnerModalTitle) {
+              partnerModalTitle.textContent = 'Become a Services Partner';
+            }
+            if (partnerModalSubmit) {
+              partnerModalSubmit.textContent = 'Submit application';
+            }
+          } else {
+            if (partnerModalTitle) {
+              partnerModalTitle.textContent = 'Apply as a Data Supplier';
+            }
+            if (partnerModalSubmit) {
+              partnerModalSubmit.textContent = 'Submit application';
+            }
+          }
+
+          setInlineHeader(normalizedMode);
 
           modalFieldsets.forEach(function (fieldset) {
             var isActive = fieldset.getAttribute('data-mode') === normalizedMode;
@@ -1397,6 +1531,26 @@
               }
             );
           });
+        }
+
+        function focusFirstVisibleFormField(preventScroll) {
+          if (!partnerForm) {
+            return;
+          }
+
+          var target =
+            partnerForm.querySelector('#company-name:not([disabled])') ||
+            partnerForm.querySelector('.form-common [required]:not([disabled])') ||
+            partnerForm.querySelector('.form-mode:not([hidden]) [required]:not([disabled])') ||
+            partnerForm.querySelector('input:not([disabled]), select:not([disabled]), textarea:not([disabled])');
+
+          if (target) {
+            try {
+              target.focus({ preventScroll: !!preventScroll });
+            } catch (error) {
+              target.focus();
+            }
+          }
         }
 
         function getModalFocusableElements() {
@@ -1526,15 +1680,42 @@
           document.body.classList.add('modal-open');
           requestAnimationFrame(function () {
             partnerModal.classList.add('is-open');
-            var firstField = partnerForm.querySelector(
-              '.form-common input:not([disabled]), .form-common select:not([disabled]), .form-common textarea:not([disabled])'
-            );
-            if (firstField) {
-              firstField.focus();
-            } else {
-              partnerModal.focus();
-            }
+            focusFirstVisibleFormField(false);
           });
+        }
+
+        function openInlineForm(mode, triggerEl) {
+          if (!inlineFormSection || !partnerForm) {
+            return;
+          }
+
+          modalLastTrigger = triggerEl || document.activeElement;
+          setVersion('v2');
+          setModalMode(mode);
+          var targetTab = mode === 'services'
+            ? document.getElementById('tab-services')
+            : document.getElementById('tab-data');
+          if (targetTab) {
+            setActiveTab(targetTab, false);
+            syncPanelHeight();
+          }
+
+          var navHeight = parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue('--top-nav-height')
+          );
+          var topNavOffset = Number.isNaN(navHeight) ? 76 : navHeight;
+          var stickyTabsOffset = tablistWrap ? tablistWrap.offsetHeight : 0;
+          var titleTarget = inlineFormTitle || inlineFormSection;
+          var targetY =
+            titleTarget.getBoundingClientRect().top + window.scrollY - topNavOffset - stickyTabsOffset;
+
+          window.scrollTo({
+            top: Math.max(0, targetY),
+            behavior: 'smooth'
+          });
+          window.setTimeout(function () {
+            focusFirstVisibleFormField(true);
+          }, 220);
         }
 
         function closePartnerModal() {
@@ -1613,7 +1794,17 @@
         modalOpeners.forEach(function (trigger) {
           trigger.addEventListener('click', function (event) {
             event.preventDefault();
-            openPartnerModal(trigger.getAttribute('data-mode'), trigger);
+            if (document.body.getAttribute('data-version') === 'v1') {
+              openPartnerModal(trigger.getAttribute('data-mode'), trigger);
+            } else {
+              openInlineForm(trigger.getAttribute('data-mode'), trigger);
+            }
+          });
+        });
+
+        versionButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            setVersion(button.getAttribute('data-set-version'));
           });
         });
 
@@ -1638,7 +1829,11 @@
             if (!validatePartnerForm()) {
               return;
             }
-            closePartnerModal();
+            if (document.body.getAttribute('data-version') === 'v1') {
+              closePartnerModal();
+            }
+            partnerForm.reset();
+            clearFormErrors();
           });
         }
 
@@ -1653,6 +1848,8 @@
         });
 
         setActiveTab(tabs[0], false);
+        setVersion(document.body.getAttribute('data-version') || 'v1');
+        setModalMode('data');
         initTestimonials();
         initFaqAccordions();
         syncPanelHeight();
