@@ -58,10 +58,10 @@
           </h5>
           <a class="btn btn-primary" href="#partnership-models" data-version="v1">View partnership models</a>
           <div class="cta-row" data-version="v2">
-            <button class="btn btn-primary" type="button" data-open-form="true" data-mode="data">
+            <button class="btn btn-primary" type="button">
               Apply as a Data Supplier
             </button>
-            <button class="btn btn-secondary" type="button" data-open-form="true" data-mode="services">
+            <button class="btn btn-secondary" type="button">
               Become a Services Partner
             </button>
           </div>
@@ -152,8 +152,6 @@
                 class="btn btn-primary tab-sticky-cta"
                 type="button"
                 data-version="v1"
-                data-open-form="true"
-                data-mode="data"
               >
                 Apply as a Data Supplier
               </button>
@@ -484,24 +482,6 @@
                   </div>
                 </section>
 
-                <div class="content-block tab-panel-cta" data-version="v1">
-                  <div class="tab-panel-cta-inner">
-                    <h2>Ready to partner with Defined.ai?</h2>
-                    <div class="cta-row">
-                      <button
-                        class="btn btn-primary"
-                        type="button"
-                        data-open-form="true"
-                        data-mode="data"
-                      >
-                        Apply as Data Supplier
-                      </button>
-                      <span class="cta-divider">or</span>
-                      <button class="btn btn-secondary" type="button">Get in touch</button>
-                    </div>
-                  </div>
-                </div>
-
               </section>
 
               <section
@@ -828,40 +808,9 @@
                   </div>
                 </section>
 
-                <div class="content-block tab-panel-cta" data-version="v1">
-                  <div class="tab-panel-cta-inner">
-                    <h2>Ready to partner with Defined.ai?</h2>
-                    <div class="cta-row">
-                      <button
-                        class="btn btn-primary"
-                        type="button"
-                        data-open-form="true"
-                        data-mode="services"
-                      >
-                        Become a Services Partner
-                      </button>
-                      <span class="cta-divider">or</span>
-                      <button class="btn btn-secondary" type="button">Get in touch</button>
-                    </div>
-                  </div>
-                </div>
-
               </section>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="partner-apply" class="section partner-apply" data-version="v2">
-        <div class="partner-apply__inner">
-          <header class="partner-apply__header">
-            <h2 id="partner-apply-title">Apply as a Data Supplier</h2>
-            <p id="partner-apply-description">
-              Tell us about your datasets, scale, and compliance. We&rsquo;ll review your
-              submission and get back to you.
-            </p>
-          </header>
-          <div id="partner-apply-form-slot"></div>
         </div>
       </section>
 
@@ -935,243 +884,6 @@
         </div>
       </div>
     </footer>
-
-    <div
-      class="partner-modal"
-      id="partner-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="partner-modal-title"
-      tabindex="-1"
-      data-version="v1"
-      hidden
-    >
-      <div class="partner-modal__backdrop" data-partner-modal-close></div>
-      <div class="partner-modal__panel" role="document">
-        <div class="partner-modal__header">
-          <h2 id="partner-modal-title">Apply as a Data Supplier</h2>
-          <button class="partner-modal__close" type="button" aria-label="Close" data-partner-modal-close>
-            &times;
-          </button>
-        </div>
-
-        <form class="partner-form" id="partner-form" novalidate>
-          <div class="form-common">
-            <div class="form-grid">
-              <div class="field">
-                <label for="company-name">Company name</label>
-                <input id="company-name" name="company_name" type="text" required />
-              </div>
-              <div class="field">
-                <label for="company-website">Company website</label>
-                <input id="company-website" name="company_website" type="url" required />
-              </div>
-              <div class="field">
-                <label for="company-size">Company size</label>
-                <select id="company-size" name="company_size" required>
-                  <option value="">Select</option>
-                  <option>1-10</option>
-                  <option>11-50</option>
-                  <option>51-200</option>
-                  <option>201-500</option>
-                  <option>500+</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="country-region">Country / Region</label>
-                <input id="country-region" name="country_region" type="text" required />
-              </div>
-              <div class="field">
-                <label for="contact-name">Primary contact name</label>
-                <input id="contact-name" name="contact_name" type="text" required />
-              </div>
-              <div class="field">
-                <label for="work-email">Work email</label>
-                <input id="work-email" name="work_email" type="email" required />
-              </div>
-              <div class="field">
-                <label for="job-title">Role / Job title (optional)</label>
-                <input id="job-title" name="job_title" type="text" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="notes-message">Notes / message (optional)</label>
-              <textarea id="notes-message" name="notes_message" rows="3"></textarea>
-            </div>
-          </div>
-
-          <fieldset class="form-mode form-data" data-mode="data">
-            <legend>Data Supplier details</legend>
-            <div class="form-grid">
-              <div class="field">
-                <label>Data types provided</label>
-                <div class="check-grid">
-                  <label><input type="checkbox" name="data_types" value="Text" /> Text</label>
-                  <label><input type="checkbox" name="data_types" value="Audio" /> Audio</label>
-                  <label><input type="checkbox" name="data_types" value="Image" /> Image</label>
-                  <label><input type="checkbox" name="data_types" value="Video" /> Video</label>
-                  <label><input type="checkbox" name="data_types" value="Multimodal" /> Multimodal</label>
-                </div>
-              </div>
-              <div class="field">
-                <label>Domain / industry</label>
-                <div class="check-grid">
-                  <label><input type="checkbox" name="data_domain" value="Finance" /> Finance</label>
-                  <label><input type="checkbox" name="data_domain" value="Healthcare" /> Healthcare</label>
-                  <label><input type="checkbox" name="data_domain" value="Retail" /> Retail</label>
-                  <label><input type="checkbox" name="data_domain" value="Legal" /> Legal</label>
-                  <label><input type="checkbox" name="data_domain" value="Other" /> Other</label>
-                </div>
-                <input type="text" name="data_domain_other" placeholder="Other domain (optional)" />
-              </div>
-              <div class="field">
-                <label for="data-languages">Languages covered</label>
-                <input id="data-languages" name="data_languages" type="text" />
-              </div>
-              <div class="field">
-                <label for="dataset-size">Approximate dataset size</label>
-                <select id="dataset-size" name="dataset_size">
-                  <option value="">Select</option>
-                  <option>&lt;10k</option>
-                  <option>10k-100k</option>
-                  <option>100k-1M</option>
-                  <option>1M+</option>
-                </select>
-              </div>
-              <div class="field form-grid-span-2">
-                <label for="dataset-description">Short dataset description</label>
-                <textarea id="dataset-description" name="dataset_description" rows="3" required></textarea>
-              </div>
-              <div class="field">
-                <label>Data format</label>
-                <div class="check-grid">
-                  <label><input type="checkbox" name="data_format" value="Raw" /> Raw</label>
-                  <label><input type="checkbox" name="data_format" value="Annotated/Labeled" /> Annotated/Labeled</label>
-                  <label><input type="checkbox" name="data_format" value="Structured" /> Structured</label>
-                  <label><input type="checkbox" name="data_format" value="Unstructured" /> Unstructured</label>
-                </div>
-              </div>
-              <div class="field">
-                <label for="update-frequency">Update frequency</label>
-                <select id="update-frequency" name="update_frequency">
-                  <option value="">Select</option>
-                  <option>One-time</option>
-                  <option>Periodic</option>
-                  <option>Continuous</option>
-                </select>
-              </div>
-              <div class="field">
-                <label>Consent and usage rights</label>
-                <div class="check-grid">
-                  <label><input type="radio" name="consent_rights" value="Yes" required /> Yes</label>
-                  <label><input type="radio" name="consent_rights" value="Partially" /> Partially</label>
-                  <label><input type="radio" name="consent_rights" value="Not yet" /> Not yet</label>
-                </div>
-              </div>
-              <div class="field">
-                <label>Documentation available</label>
-                <div class="check-grid">
-                  <label><input type="radio" name="documentation_available" value="Yes" required /> Yes</label>
-                  <label><input type="radio" name="documentation_available" value="In progress" /> In progress</label>
-                  <label><input type="radio" name="documentation_available" value="No" /> No</label>
-                </div>
-              </div>
-              <div class="field">
-                <label for="monetization-model">Preferred monetization model</label>
-                <select id="monetization-model" name="monetization_model">
-                  <option value="">Select</option>
-                  <option>Licensing</option>
-                  <option>Revenue share</option>
-                  <option>Open to discussion</option>
-                </select>
-              </div>
-              <div class="field form-grid-span-2">
-                <label class="checkbox-inline">
-                  <input
-                    type="checkbox"
-                    name="data_confirmation"
-                    required
-                  />
-                  I confirm I have the rights to share this information for evaluation purposes.
-                </label>
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset class="form-mode form-services" data-mode="services" hidden>
-            <legend>Services Supplier details</legend>
-            <div class="form-grid">
-              <div class="field">
-                <label>Services offered</label>
-                <div class="check-grid">
-                  <label><input type="checkbox" name="services_offered" value="Data collection" /> Data collection</label>
-                  <label><input type="checkbox" name="services_offered" value="Data annotation" /> Data annotation</label>
-                  <label><input type="checkbox" name="services_offered" value="Model evaluation/QA" /> Model evaluation/QA</label>
-                  <label><input type="checkbox" name="services_offered" value="Human feedback" /> Human feedback</label>
-                  <label><input type="checkbox" name="services_offered" value="Domain/language expertise" /> Domain/language expertise</label>
-                  <label><input type="checkbox" name="services_offered" value="Other" /> Other</label>
-                </div>
-              </div>
-              <div class="field">
-                <label for="delivery-regions">Delivery regions / languages</label>
-                <input id="delivery-regions" name="delivery_regions" type="text" />
-              </div>
-              <div class="field">
-                <label for="engagement-type">Typical engagement type</label>
-                <select id="engagement-type" name="engagement_type">
-                  <option value="">Select</option>
-                  <option>Project-based</option>
-                  <option>Program-based</option>
-                  <option>Both</option>
-                  <option>Not sure</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="team-capacity">Team capacity</label>
-                <select id="team-capacity" name="team_capacity">
-                  <option value="">Select</option>
-                  <option>1-5</option>
-                  <option>6-20</option>
-                  <option>21-50</option>
-                  <option>50+</option>
-                </select>
-              </div>
-              <div class="field form-grid-span-2">
-                <label for="experience-examples">Relevant experience / case examples</label>
-                <textarea id="experience-examples" name="experience_examples" rows="3" required></textarea>
-              </div>
-              <div class="field form-grid-span-2">
-                <label for="quality-process">Quality standards / process (optional)</label>
-                <textarea id="quality-process" name="quality_process" rows="3"></textarea>
-              </div>
-              <div class="field">
-                <label for="start-timeframe">Preferred start timeframe</label>
-                <select id="start-timeframe" name="start_timeframe">
-                  <option value="">Select</option>
-                  <option>ASAP</option>
-                  <option>2-4 weeks</option>
-                  <option>1-3 months</option>
-                  <option>Not sure</option>
-                </select>
-              </div>
-              <div class="field form-grid-span-2">
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="services_confirmation" required />
-                  I confirm the information provided is accurate for evaluation purposes.
-                </label>
-              </div>
-            </div>
-          </fieldset>
-
-          <div class="form-actions">
-            <button class="btn btn-primary" type="submit" id="partner-modal-submit">
-              Submit application
-            </button>
-            <button class="btn btn-secondary" type="button" data-partner-modal-close>Cancel</button>
-          </div>
-        </form>
-      </div>
-    </div>
 
     <div class="version-toggle" aria-label="Version switcher">
       <p>Version</p>
@@ -1685,13 +1397,10 @@
         }
 
         function openInlineForm(mode, triggerEl) {
-          if (!inlineFormSection || !partnerForm) {
-            return;
-          }
-
           modalLastTrigger = triggerEl || document.activeElement;
-          setVersion('v2');
-          setModalMode(mode);
+          if (partnerForm) {
+            setModalMode(mode);
+          }
           var targetTab = mode === 'services'
             ? document.getElementById('tab-services')
             : document.getElementById('tab-data');
@@ -1705,7 +1414,10 @@
           );
           var topNavOffset = Number.isNaN(navHeight) ? 76 : navHeight;
           var stickyTabsOffset = tablistWrap ? tablistWrap.offsetHeight : 0;
-          var titleTarget = inlineFormTitle || inlineFormSection;
+          var titleTarget = document.getElementById('partnership-models');
+          if (!titleTarget) {
+            return;
+          }
           var targetY =
             titleTarget.getBoundingClientRect().top + window.scrollY - topNavOffset - stickyTabsOffset;
 
@@ -1713,9 +1425,6 @@
             top: Math.max(0, targetY),
             behavior: 'smooth'
           });
-          window.setTimeout(function () {
-            focusFirstVisibleFormField(true);
-          }, 220);
         }
 
         function closePartnerModal() {
@@ -1794,11 +1503,7 @@
         modalOpeners.forEach(function (trigger) {
           trigger.addEventListener('click', function (event) {
             event.preventDefault();
-            if (document.body.getAttribute('data-version') === 'v1') {
-              openPartnerModal(trigger.getAttribute('data-mode'), trigger);
-            } else {
-              openInlineForm(trigger.getAttribute('data-mode'), trigger);
-            }
+            openInlineForm(trigger.getAttribute('data-mode'), trigger);
           });
         });
 
